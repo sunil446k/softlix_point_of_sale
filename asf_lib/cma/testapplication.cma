@@ -1,0 +1,27 @@
+
+import services.Testservice
+import component.Testcomponent
+
+application newapp version 1.0.0
+{
+
+cmsSocketClientConnector testSocketSrv {
+	Encoding = Json
+}
+
+cmsSocketServerConnector testSocketCli {
+	Encoding     = Json
+	PortNumber   = 4646
+	BindToAdress = "locathost"
+}
+
+thread T1 {
+	immediate TestComponent testComponent
+}
+
+TestService newSrv = testSocket.importByName("localhost", 4646, "TEST")
+bind testComponenet.testPort to newsrv
+		     
+testSocketSrv.exportByName("TEST");
+
+}
