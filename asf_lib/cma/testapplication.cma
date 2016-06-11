@@ -1,6 +1,8 @@
 
+package TestClientComponent
+
 import services.Testservice
-import component.Testcomponent
+import components.Testcomponent
 
 application newapp version 1.0.0
 {
